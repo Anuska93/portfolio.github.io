@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anuska Ghosh | Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1c1c1c;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(to right, #000000, #333333);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      animation: fadeInDown 1s ease forwards;
+      opacity: 0;
+    }
+    nav {
+      background-color: #2c2c2c;
+      text-align: center;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+    nav a:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #ffffff;
+      border-bottom: 2px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #ff5f6d, #ffc371);
+      border-radius: 2px;
+      opacity: 0;
+      animation: underlineFadeIn 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes underlineFadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+    .project, .skill-box, .edu-item {
+      background-color: #2a2a2a;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #444;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .project.visible, .skill-box.visible, .edu-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .project:hover, .skill-box:hover, .edu-item:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(255, 95, 109, 0.4);
+    }
+    /* Skill boxes inline and center */
+    #skills {
+      text-align: center;
+    }
+    .skill-box {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      text-align: center;
+      border: 2px solid transparent;
+      background: linear-gradient(145deg, #444, #1f1f1f);
+      color: #f0f0f0;
+      font-weight: 600;
+      box-shadow: 4px 4px 8px #161616, -4px -4px 8px #3a3a3a;
+      cursor: default;
+      user-select: none;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    form.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      font-size: 1em;
+      transition: box-shadow 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #ff5f6d;
+      border-color: #ff5f6d;
+    }
+    button {
+      background-color: #555;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      font-weight: 700;
+    }
+    button:hover {
+      background-color: #ff5f6d;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff5f6d;
+    }
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Anuska Ghosh</h1>
+    <p>Java & Web Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I’m Anuska Ghosh, a fervent and imaginative developer who finds joy in weaving creativity with cutting-edge technology. Driven by an insatiable curiosity and a relentless pursuit of excellence, I craft elegant code and design captivating digital experiences that leave a lasting impression. Whether I’m orchestrating complex Java logic or painting dynamic, user-friendly interfaces with HTML, CSS, and JavaScript, my goal is to build solutions that are not only efficient and robust but also beautiful and intuitive. I believe in the power of technology to transform ideas into reality and am committed to continuous learning, embracing every challenge as a chance to innovate, grow, and make a meaningful impact through my work.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-box">Java</div>
+    <div class="skill-box">HTML</div>
+    <div class="skill-box">CSS</div>
+    <div class="skill-box">JavaScript</div>
+    <div class="skill-box">SQL</div>
+    <div class="skill-box">Problem Solving</div>
+    <div class="skill-box">Communication Skills</div>
+    <div class="skill-box">Time Management</div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-item">
+      <h3>Bachelor of Technology <span>2021–2025</span></h3>
+      <p>University of Engineering and Management, Kolkata</p>
+      <p>B.Tech in Computer Science and Engineering | CGPA: 8.6</p>
+    </div>
+    <div class="edu-item">
+      <h3>12th Grade <span>2019–2021</span></h3>
+      <p>Pathfinder Higher Secondary Public School, Jodhpur Park</p>
+      <p>Percentage: 86.2%</p>
+    </div>
+    <div class="edu-item">
+      <h3>10th Grade <span>2009–2019</span></h3>
+      <p>Kendriya Vidyalaya Ballygunge</p>
+      <p>Percentage: 90.4%</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Infant Distress Decoder</h3>
+      <p>This project listens to the cries of babies and tries to understand what they are trying to say, like if they’re hungry, uncomfortable, or need attention. It uses smart computer algorithms to learn from many baby cries and predict the reason behind each cry accurately. This helps parents or caregivers respond quickly and take better care of their babies, even when it’s hard to tell what the baby wants.</p>
+    </div>
+    <div class="project">
+      <h3>College Event Management System</h3>
+      <p>This is a website that makes organizing college events easy. Event planners can post details about upcoming events, and students can sign up to join. It also sends reminders so nobody misses out on fun activities happening around campus.</p>
+    </div>
+    <div class="project">
+      <h3>Personal Portfolio Website</h3>
+      <p>This website shows who I am, what skills I have, and the projects I’ve worked on. It’s designed to look clean and modern, making it easy for anyone to learn about me quickly.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Anuska Ghosh | Designed with ♥</p>
+  </footer>
+
+  <script>
+    // Intersection Observer to add "visible" class for fade-in on scroll
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections, project, skill-box, edu-item, form
+    document.querySelectorAll('section, .project, .skill-box, .edu-item, form').forEach(el => {
+      observer.observe(el);
+    });
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you for your message!");
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
